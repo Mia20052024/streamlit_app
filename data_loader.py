@@ -93,7 +93,7 @@ def load_tmdb_via_kagglehub() -> LoadResult:
     # Candidate CSV paths (official filenames)
     csv_path_candidates: Tuple[str, ...] = (
         os.path.join(data_dir, "tmdb_5000_movies.csv"),
-        os.path.join(data_dir, "tmdb_5000_movies_2.csv"),  # alternative naming compatibility
+        os.path.join(data_dir, "tmdb_5000_movies_2.csv"),
     )
 
     csv_path: Optional[str] = next((p for p in csv_path_candidates if os.path.exists(p)), None)

@@ -119,15 +119,6 @@ def section_questions_hub(df: pd.DataFrame) -> None:
             "Release month heatmap",
             "Decade trends: Budget/Revenue/Rating",
             "Sequel vs Original Comparison",
-            "Vote count vs Rating stability",
-            "High-ROI Top-K vs Low-ROI Bottom-K profile comparison",
-            "High/Low ROI profile comparison",
-            "ROI turning point across budget bins",
-            "Genre × Country synergy",
-            "Popularity vs Revenue",
-            "Production country ROI",
-            "Production company ROI",
-            "Genre share by decade",
         ),
     )
 
@@ -151,26 +142,7 @@ def section_questions_hub(df: pd.DataFrame) -> None:
         st.altair_chart(chart_decade_multi_trend(df), use_container_width=True)
     elif opt == "Sequel vs Original Comparison":
         st.altair_chart(chart_sequel_original_bar(df, metric="roi"), use_container_width=True)
-    elif opt == "Vote count vs Rating stability":
-        st.altair_chart(chart_vote_count_stability_line(df), use_container_width=True)
-    elif opt == "High-ROI Top-K vs Low-ROI Bottom-K profile comparison":
-        k = st.slider("K", 10, 100, 30)
-        st.altair_chart(chart_roi_profile_compare(df, k=k), use_container_width=True)
-    elif opt == "High/Low ROI profile comparison":
-        k = st.slider("K", 10, 100, 30, key="k_radar")
-        st.altair_chart(chart_roi_profile_radar(df, k=k), use_container_width=True)
-    elif opt == "ROI turning point across budget bins":
-        st.altair_chart(chart_budget_bin_roi_turning(df), use_container_width=True)
-    elif opt == "Genre × Country synergy":
-        st.altair_chart(chart_genre_country_heat(df), use_container_width=True)
-    elif opt == "Popularity vs Revenue":
-        st.altair_chart(chart_popularity_vs_revenue(df), use_container_width=True)
-    elif opt == "Production country ROI":
-        st.altair_chart(chart_country_roi(df), use_container_width=True)
-    elif opt == "Production company ROI":
-        st.altair_chart(chart_company_roi(df), use_container_width=True)
-    else:
-        st.altair_chart(chart_genre_share_by_decade(df), use_container_width=True)
+
 
 
 def section_eda(df: pd.DataFrame) -> None:
