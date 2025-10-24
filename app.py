@@ -2,11 +2,8 @@ from __future__ import annotations
 
 import streamlit as st
 import pandas as pd
-import numpy as np
-import altair as alt
-import re
 
-from data_loader import load_tmdb_via_kagglehub, clean_movies, LoadResult
+from data_loader import load_tmdb_via_kagglehub, LoadResult
 from constants import PAGE_TITLE, PAGE_DESC
 from filters import build_sidebar, apply_filters
 from components import kpi_cards
@@ -17,9 +14,6 @@ from sections import (
     section_eda,
     section_leaderboard,
 )
-
-PAGE_TITLE = PAGE_TITLE
-PAGE_DESC = PAGE_DESC
 
 
 
